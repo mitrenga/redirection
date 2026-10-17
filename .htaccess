@@ -1,0 +1,12 @@
+# keep the configuration from being downloaded over the web (Apache; the
+# svision nginx configs already deny *.json)
+<Files "config.json">
+  Require all denied
+</Files>
+
+# every old URL (deep links, /serviceWorker, /version.db, …) ends up in
+# index.php with the path as the query string — the same rewrite the svision
+# nginx configs use
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?$1 [QSA,L]

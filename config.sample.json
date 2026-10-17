@@ -1,0 +1,9 @@
+{
+  "siteName": "My Site",
+  "oldUrl": "https://old.example.com/",
+  "newUrl": "https://new.example.com/",
+  "version": "#moved",
+  "redirectSeconds": 0,
+  "keepPath": false,
+  "clearSiteData": true
+}
